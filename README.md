@@ -32,6 +32,12 @@ docker compose up -d --build
 docker compose up
 ```
 
+3. Execução de testes
+```
+go test -v ./...
+```
+
+
 📁 Estrutura de Diretórios
 ```
 .
@@ -57,7 +63,7 @@ docker compose up
 │   │   │   └── web
 │   │   │       └── controller     # Camada de entrada da aplicação (handlers HTTP via Gin)
 │   │   ├── database
-│   │   │   ├── auction            # Implementações de persistência da entidade Auction (Mongo)
+│   │   │   ├── auction            # Implementações de persistência da entidade Auction (Mongo) E teste unitário
 │   │   │   ├── bid                # Implementações de persistência da entidade Bid
 │   │   │   └── user               # Implementações de persistência da entidade User
 │   ├── internal_error             # Definições de erros internos da aplicação (usado por toda a lógica)
