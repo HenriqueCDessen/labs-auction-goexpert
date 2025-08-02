@@ -3,21 +3,11 @@ package user_controller
 import (
 	"context"
 	"fullcycle-auction_go/configuration/rest_err"
-	"fullcycle-auction_go/internal/usecase/user_usecase"
+	"net/http"
+
 	"github.com/gin-gonic/gin"
 	"github.com/google/uuid"
-	"net/http"
 )
-
-type UserController struct {
-	userUseCase user_usecase.UserUseCaseInterface
-}
-
-func NewUserController(userUseCase user_usecase.UserUseCaseInterface) *UserController {
-	return &UserController{
-		userUseCase: userUseCase,
-	}
-}
 
 func (u *UserController) FindUserById(c *gin.Context) {
 	userId := c.Param("userId")
